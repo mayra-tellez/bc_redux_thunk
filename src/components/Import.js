@@ -8,22 +8,23 @@ import MenuItem from '@mui/material/MenuItem';
 
 const options = [
     'Delete'
-  ];
-  
+];
 
 const Import = (props) => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [deleteIndex, setDeleteIndex] = useState(0);
     const open = Boolean(anchorEl);
+
     const handleClick = (event, index) => {
       setAnchorEl(event.currentTarget);
       setDeleteIndex(index)
-        };
+    };
+
     const handleClose = () => {
       setAnchorEl(null);
       props.deleteMake(deleteIndex)
     };
-        console.log(props.makes)
+
     return (
         <Container>
         <Button variant="contained" color="primary" onClick={props.fetchMakes}> Import </Button>
@@ -72,7 +73,7 @@ const Import = (props) => {
         // }}
       >
           {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Delete'} onClick={handleClose} index={props.index}>
+          <MenuItem key={option} selected={option === 'Delete'} onClick={handleClose} index={deleteIndex}>
             {option}
           </MenuItem>
         ))}

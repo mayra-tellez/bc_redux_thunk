@@ -10,10 +10,10 @@ import { RoundaboutLeftSharp } from '@mui/icons-material'
 const Router = () => {
     return (
         <Routes>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/car/:id" component={Car} />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route exact path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/car/:id" component={<Car />} />
+            <Route path="/dashboard" component={<Dashboard />} />
             <Route path="/import" element={<Import/>} />
         </Routes>
     );
